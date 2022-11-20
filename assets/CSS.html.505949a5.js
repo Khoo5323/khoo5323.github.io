@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-13390d3b","path":"/note/frontend/base/CSS.html","title":"CSS","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/base/CSS.md"}');export{e as data};

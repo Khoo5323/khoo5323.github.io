@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-8daa1a0e","path":"/","title":"首页","lang":"zh-CN","frontmatter":{"home":true,"title":"首页","actions":[{"text":"前端笔记","link":"/note/frontend/base/HTML.html","type":"primary"}],"footer":"MIT Licensed | Copyright © 2018-present Evan You"},"excerpt":"","headers":[],"git":{},"filePathRelative":"README.md"}');export{e as data};

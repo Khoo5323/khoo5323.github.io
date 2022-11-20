@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.53">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>jQuery | 麦林斯的笔记</title><meta name="description" content=" ">
+    <link rel="preload" href="/assets/style.e06f2840.css" as="style" /><link rel="stylesheet" href="/assets/style.e06f2840.css" />
+    <link rel="modulepreload" href="/assets/app.93fa9761.js"><link rel="modulepreload" href="/assets/jQuery.html.1024fafa.js"><link rel="modulepreload" href="/assets/jQuery.html.bf8848ac.js"><link rel="prefetch" href="/assets/index.html.5c635ae7.js" as="script" /><link rel="prefetch" href="/assets/CSS.html.505949a5.js" as="script" /><link rel="prefetch" href="/assets/Flex.html.f9ce955c.js" as="script" /><link rel="prefetch" href="/assets/H5C3.html.192d2f5a.js" as="script" /><link rel="prefetch" href="/assets/HTML.html.b4cea3bb.js" as="script" /><link rel="prefetch" href="/assets/HTTP.html.c3fe2e38.js" as="script" /><link rel="prefetch" href="/assets/Uni-app.html.41cd190d.js" as="script" /><link rel="prefetch" href="/assets/微信公众号.html.3d1b656d.js" as="script" /><link rel="prefetch" href="/assets/微信小程序.html.2f9dd982.js" as="script" /><link rel="prefetch" href="/assets/404.html.c3e557d0.js" as="script" /><link rel="prefetch" href="/assets/index.html.2ba5fe0a.js" as="script" /><link rel="prefetch" href="/assets/CSS.html.198ccf95.js" as="script" /><link rel="prefetch" href="/assets/Flex.html.7b9efc98.js" as="script" /><link rel="prefetch" href="/assets/H5C3.html.40439bdb.js" as="script" /><link rel="prefetch" href="/assets/HTML.html.c43584aa.js" as="script" /><link rel="prefetch" href="/assets/HTTP.html.a86eee72.js" as="script" /><link rel="prefetch" href="/assets/Uni-app.html.ac6ee772.js" as="script" /><link rel="prefetch" href="/assets/微信公众号.html.0342d55a.js" as="script" /><link rel="prefetch" href="/assets/微信小程序.html.d6ac439e.js" as="script" /><link rel="prefetch" href="/assets/404.html.d2b04348.js" as="script" />
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">麦林斯的笔记</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">前端基础 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/note/frontend/base/HTTP.html" class="sidebar-item" aria-label="HTTP"><!--[--><!--]--> HTTP <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/HTML.html" class="sidebar-item" aria-label="HTML"><!--[--><!--]--> HTML <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/CSS.html" class="sidebar-item" aria-label="CSS"><!--[--><!--]--> CSS <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/H5C3.html" class="sidebar-item" aria-label="H5C3"><!--[--><!--]--> H5C3 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/Flex.html" class="sidebar-item" aria-label="Flex"><!--[--><!--]--> Flex <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/note/frontend/base/jQuery.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="jQuery"><!--[--><!--]--> jQuery <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.html" class="sidebar-item" aria-label="微信小程序"><!--[--><!--]--> 微信小程序 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/Uni-app.html" class="sidebar-item" aria-label="Uni-app"><!--[--><!--]--> Uni-app <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading">javaScript <!----></p><!----></li><li><p tabindex="0" class="sidebar-item sidebar-heading">Vue <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="jquery" tabindex="-1"><a class="header-anchor" href="#jquery" aria-hidden="true">#</a> jQuery</h1><h1 id="jquery-1" tabindex="-1"><a class="header-anchor" href="#jquery-1" aria-hidden="true">#</a> <strong>jQuery</strong></h1><h1 id="jquery介绍与使用" tabindex="-1"><a class="header-anchor" href="#jquery介绍与使用" aria-hidden="true">#</a> <strong>jQuery介绍与使用</strong></h1><h1 id="一、jquery介绍" tabindex="-1"><a class="header-anchor" href="#一、jquery介绍" aria-hidden="true">#</a> <strong>一、jQuery介绍</strong></h1><blockquote><p>jQuery 是一个JavaScript库，是一个轻量级的&quot;写的少，做的多&quot;的JavaScript库。</p></blockquote><p><strong><strong>jQuery相比JavaScript优点：</strong></strong></p><ul><li>jQuery的onload加载事件速度更快，并且多个加载并行</li><li>jQuery绑定事件都是使用的事件函数，不需要加on；</li><li>JavaScript的onload加载事件，后面的覆盖前面的；</li><li>在jQuery中，$( )是其运行环境；</li><li>jQuery的模块可以分为3部分：入口模块、底层支持模块和功能模块。</li></ul><p>jQuery 极大地简化了 JavaScript 编程</p><p><strong><strong>jQuery库包含以下功能：</strong></strong></p><ul><li>HTML 元素选取</li><li>HTML 元素操作</li><li>CSS 操作</li><li>HTML 事件函数</li><li>JavaScript 特效和动画</li><li>HTML DOM 遍历和修改</li><li>AJAX</li><li>Utilities</li></ul><h1 id="二、jquery教程" tabindex="-1"><a class="header-anchor" href="#二、jquery教程" aria-hidden="true">#</a> <strong>二、jQuery教程</strong></h1><p><strong><strong>下载jQuery</strong></strong></p><p>我们可以到jQuery的官网下载jQuery文件（PS：其实jQuery就是一个封装了很多函数的js文件，把这个js文件导入到网页中就可以了）。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>jQuery官网地址： https://jquery.com/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>打开官网，即可看到jQuery的下载按钮，点击进入下载页面。有两个版本的jQuery可以下载：</p><ul><li>Production version - 用于实际的网站中，是已经被精简和压缩过的jQuery文件。</li><li>Development version - 用于测试和开发中，是未压缩的jQuery文件，可以方便阅读源码。</li></ul><p><strong><strong>使用jQuery</strong></strong></p><p>jQuery库就是一个JavaScript文件，我们可以在HTML中使用&lt;script&gt;标签引入jQuery库：</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;head&gt;
+	&lt;script src=&quot;jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>CDN方式引用 - 百度CDN</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;head&gt;
+	&lt;script src=&quot;https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>Vue项目中引用jQuery</strong></strong></p><p><strong>安装</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>npm install jquery --save
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>修改配置文件</strong></p><p>在webpack.base.conf.js文件中添加以下代码：</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>const webpack = require(&#39;webpack&#39;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>然后在webpack.base.conf.js文件中添加plugins，代码如下：</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>plugins: [
+  new webpack.ProvidePlugin({
+    $: &quot;jquery&quot;,
+    jQuery: &quot;jquery&quot;
+  }),
+]
+//  $函数会自动添加到当前模块的上下文，无需显示声明
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在项目中引用jQuery</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import $ from &#39;jquery&#39;
+export default {
+  name: &#39;App&#39;,
+  components: {},
+  data: function () {
+    return {}
+  },
+  created:function(){
+    console.log($(&#39;#app&#39;));
+  }
+}
+&lt;/script&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>基础语法</strong></strong></p><blockquote><p>jQuery 语法是通过选取 HTML 元素，并对选取的元素执行某些操作。</p></blockquote><p>基础语法： $(selector).action()</p><ul><li>美元符号定义 jQuery</li><li>选择符（selector）&quot;查询&quot;和&quot;查找&quot; HTML 元素</li><li>jQuery 的 action() 执行对元素的操作</li></ul><p>实例</p><ul><li>$(this).hide() - 隐藏当前元素</li><li>$(&quot;p&quot;).hide() - 隐藏所有 &lt;p&gt; 元素</li><li>$(&quot;p.test&quot;).hide() - 隐藏所有 class=&quot;test&quot; 的 &lt;p&gt; 元素</li><li>$(&quot;#test&quot;).hide() - 隐藏 id=&quot;test&quot; 的元素</li></ul><p><strong>jQuery语法</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>$(document).ready(function(){
+  // 开始写 jQuery 代码...
+});
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>jQuery简洁语法</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>$(function(){
+  // 开始写 jQuery 代码...
+});
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="page-meta"><!----><!----><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/note/frontend/base/Flex.html" class="" aria-label="Flex"><!--[--><!--]--> Flex <!--[--><!--]--></a></span><span class="next"><a href="/note/frontend/base/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.html" class="" aria-label="微信小程序"><!--[--><!--]--> 微信小程序 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.93fa9761.js" defer></script>
+  </body>
+</html>

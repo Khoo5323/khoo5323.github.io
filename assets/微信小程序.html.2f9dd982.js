@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5b205c19","path":"/note/frontend/base/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.html","title":"微信小程序","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/base/微信小程序.md"}');export{e as data};
