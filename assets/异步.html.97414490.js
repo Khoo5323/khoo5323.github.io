@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-5bc546d2","path":"/note/frontend/JavaScript/%E5%BC%82%E6%AD%A5.html","title":"异步","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/JavaScript/异步.md"}');export{t as data};

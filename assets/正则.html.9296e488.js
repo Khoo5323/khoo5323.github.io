@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-28808300","path":"/note/frontend/JavaScript/%E6%AD%A3%E5%88%99.html","title":"正则","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/JavaScript/正则.md"}');export{t as data};

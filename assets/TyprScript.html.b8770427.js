@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-6ed7b7f6","path":"/note/frontend/Vue/TyprScript.html","title":"TyprScript","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/Vue/TyprScript.md"}');export{t as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-38cbe09c","path":"/note/frontend/Vue/Vue%E8%B7%AF%E7%94%B1.html","title":"Vue路由","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/Vue/Vue路由.md"}');export{e as data};

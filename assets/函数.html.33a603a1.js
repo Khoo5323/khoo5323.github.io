@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-e461ea00","path":"/note/frontend/JavaScript/%E5%87%BD%E6%95%B0.html","title":"函数","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/JavaScript/函数.md"}');export{t as data};

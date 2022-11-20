@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.53">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>Vue项目开发 | 麦林斯的笔记</title><meta name="description" content=" ">
+    <link rel="preload" href="/assets/style.e06f2840.css" as="style" /><link rel="stylesheet" href="/assets/style.e06f2840.css" />
+    <link rel="modulepreload" href="/assets/app.629164ab.js"><link rel="modulepreload" href="/assets/Vue项目开发.html.4d305771.js"><link rel="modulepreload" href="/assets/Vue项目开发.html.2cb3bca5.js"><link rel="prefetch" href="/assets/index.html.5c635ae7.js" as="script" /><link rel="prefetch" href="/assets/CSS.html.505949a5.js" as="script" /><link rel="prefetch" href="/assets/Flex.html.f9ce955c.js" as="script" /><link rel="prefetch" href="/assets/H5C3.html.192d2f5a.js" as="script" /><link rel="prefetch" href="/assets/HTML.html.b4cea3bb.js" as="script" /><link rel="prefetch" href="/assets/HTTP.html.c3fe2e38.js" as="script" /><link rel="prefetch" href="/assets/jQuery.html.bf8848ac.js" as="script" /><link rel="prefetch" href="/assets/Uni-app.html.41cd190d.js" as="script" /><link rel="prefetch" href="/assets/微信公众号.html.3d1b656d.js" as="script" /><link rel="prefetch" href="/assets/微信小程序.html.2f9dd982.js" as="script" /><link rel="prefetch" href="/assets/DOM_BOM.html.b44d8de6.js" as="script" /><link rel="prefetch" href="/assets/ES6.html.d87efb9a.js" as="script" /><link rel="prefetch" href="/assets/事件循环.html.f3a153c9.js" as="script" /><link rel="prefetch" href="/assets/作用域.html.b838662b.js" as="script" /><link rel="prefetch" href="/assets/函数.html.33a603a1.js" as="script" /><link rel="prefetch" href="/assets/函数进阶.html.bd71e450.js" as="script" /><link rel="prefetch" href="/assets/原型链.html.aa56778f.js" as="script" /><link rel="prefetch" href="/assets/对象.html.848419be.js" as="script" /><link rel="prefetch" href="/assets/常见知识点.html.7b440930.js" as="script" /><link rel="prefetch" href="/assets/异步.html.97414490.js" as="script" /><link rel="prefetch" href="/assets/数据劫持.html.29a61289.js" as="script" /><link rel="prefetch" href="/assets/数据类型.html.fd70a65b.js" as="script" /><link rel="prefetch" href="/assets/数组.html.8928426a.js" as="script" /><link rel="prefetch" href="/assets/正则.html.9296e488.js" as="script" /><link rel="prefetch" href="/assets/运算符.html.f0f67980.js" as="script" /><link rel="prefetch" href="/assets/面向对象.html.3133ae42.js" as="script" /><link rel="prefetch" href="/assets/Element-UI.html.95e79459.js" as="script" /><link rel="prefetch" href="/assets/TyprScript.html.b8770427.js" as="script" /><link rel="prefetch" href="/assets/Vue-Cli.html.746d3038.js" as="script" /><link rel="prefetch" href="/assets/Vue2.X基础.html.7ec47f93.js" as="script" /><link rel="prefetch" href="/assets/Vue3.X基础.html.42ca937a.js" as="script" /><link rel="prefetch" href="/assets/VueX.html.e26d5e55.js" as="script" /><link rel="prefetch" href="/assets/Vue路由.html.c4ef3cad.js" as="script" /><link rel="prefetch" href="/assets/Webpack.html.ce8d9aa5.js" as="script" /><link rel="prefetch" href="/assets/源码探索.html.12687c91.js" as="script" /><link rel="prefetch" href="/assets/生命周期.html.66726976.js" as="script" /><link rel="prefetch" href="/assets/组件通信.html.a43067eb.js" as="script" /><link rel="prefetch" href="/assets/配置开发环境.html.81034c7c.js" as="script" /><link rel="prefetch" href="/assets/404.html.c3e557d0.js" as="script" /><link rel="prefetch" href="/assets/index.html.e423ae14.js" as="script" /><link rel="prefetch" href="/assets/CSS.html.e0420ec6.js" as="script" /><link rel="prefetch" href="/assets/Flex.html.25c90ebb.js" as="script" /><link rel="prefetch" href="/assets/H5C3.html.5360943d.js" as="script" /><link rel="prefetch" href="/assets/HTML.html.7c7062a8.js" as="script" /><link rel="prefetch" href="/assets/HTTP.html.03d3679c.js" as="script" /><link rel="prefetch" href="/assets/jQuery.html.8d930cd6.js" as="script" /><link rel="prefetch" href="/assets/Uni-app.html.43a849c6.js" as="script" /><link rel="prefetch" href="/assets/微信公众号.html.b4ccf3be.js" as="script" /><link rel="prefetch" href="/assets/微信小程序.html.cc232e89.js" as="script" /><link rel="prefetch" href="/assets/DOM_BOM.html.93fe6026.js" as="script" /><link rel="prefetch" href="/assets/ES6.html.aca5e16b.js" as="script" /><link rel="prefetch" href="/assets/事件循环.html.bbee7911.js" as="script" /><link rel="prefetch" href="/assets/作用域.html.1126575d.js" as="script" /><link rel="prefetch" href="/assets/函数.html.dadc451a.js" as="script" /><link rel="prefetch" href="/assets/函数进阶.html.734a1d2f.js" as="script" /><link rel="prefetch" href="/assets/原型链.html.9ae959c8.js" as="script" /><link rel="prefetch" href="/assets/对象.html.6ae523b1.js" as="script" /><link rel="prefetch" href="/assets/常见知识点.html.4d8c1c09.js" as="script" /><link rel="prefetch" href="/assets/异步.html.cefc848b.js" as="script" /><link rel="prefetch" href="/assets/数据劫持.html.448a19e0.js" as="script" /><link rel="prefetch" href="/assets/数据类型.html.098d1a1f.js" as="script" /><link rel="prefetch" href="/assets/数组.html.8822e395.js" as="script" /><link rel="prefetch" href="/assets/正则.html.f8230894.js" as="script" /><link rel="prefetch" href="/assets/运算符.html.f03d92db.js" as="script" /><link rel="prefetch" href="/assets/面向对象.html.87672bf0.js" as="script" /><link rel="prefetch" href="/assets/Element-UI.html.1d83b2b9.js" as="script" /><link rel="prefetch" href="/assets/TyprScript.html.23b68bb0.js" as="script" /><link rel="prefetch" href="/assets/Vue-Cli.html.50b491d2.js" as="script" /><link rel="prefetch" href="/assets/Vue2.X基础.html.8f7c6fd6.js" as="script" /><link rel="prefetch" href="/assets/Vue3.X基础.html.6762cacf.js" as="script" /><link rel="prefetch" href="/assets/VueX.html.42261fc4.js" as="script" /><link rel="prefetch" href="/assets/Vue路由.html.2695bb69.js" as="script" /><link rel="prefetch" href="/assets/Webpack.html.1583d384.js" as="script" /><link rel="prefetch" href="/assets/源码探索.html.4402ade9.js" as="script" /><link rel="prefetch" href="/assets/生命周期.html.f7a43877.js" as="script" /><link rel="prefetch" href="/assets/组件通信.html.4a1cd2e0.js" as="script" /><link rel="prefetch" href="/assets/配置开发环境.html.b6fc84ec.js" as="script" /><link rel="prefetch" href="/assets/404.html.09c13488.js" as="script" />
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">麦林斯的笔记</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/note/frontend/base/HTTP.md" class="" aria-label="前端笔记"><!--[--><!--]--> 前端笔记 <!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/note/frontend/base/HTTP.md" class="" aria-label="前端笔记"><!--[--><!--]--> 前端笔记 <!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading">前端基础 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/note/frontend/base/HTTP.html" class="sidebar-item" aria-label="HTTP"><!--[--><!--]--> HTTP <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/HTML.html" class="sidebar-item" aria-label="HTML"><!--[--><!--]--> HTML <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/CSS.html" class="sidebar-item" aria-label="CSS"><!--[--><!--]--> CSS <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/H5C3.html" class="sidebar-item" aria-label="H5C3"><!--[--><!--]--> H5C3 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/Flex.html" class="sidebar-item" aria-label="Flex"><!--[--><!--]--> Flex <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/jQuery.html" class="sidebar-item" aria-label="jQuery"><!--[--><!--]--> jQuery <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.html" class="sidebar-item" aria-label="微信小程序"><!--[--><!--]--> 微信小程序 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/base/Uni-app.html" class="sidebar-item" aria-label="Uni-app"><!--[--><!--]--> Uni-app <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading">javaScript <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/note/frontend/JavaScript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" class="sidebar-item" aria-label="数据类型"><!--[--><!--]--> 数据类型 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E8%BF%90%E7%AE%97%E7%AC%A6.html" class="sidebar-item" aria-label="运算符"><!--[--><!--]--> 运算符 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E6%95%B0%E7%BB%84.html" class="sidebar-item" aria-label="数组"><!--[--><!--]--> 数组 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E5%87%BD%E6%95%B0.html" class="sidebar-item" aria-label="函数"><!--[--><!--]--> 函数 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E4%BD%9C%E7%94%A8%E5%9F%9F.html" class="sidebar-item" aria-label="作用域"><!--[--><!--]--> 作用域 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E5%AF%B9%E8%B1%A1.html" class="sidebar-item" aria-label="对象"><!--[--><!--]--> 对象 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E5%8E%9F%E5%9E%8B%E9%93%BE.html" class="sidebar-item" aria-label="原型链"><!--[--><!--]--> 原型链 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/DOM&amp;BOM.html" class="sidebar-item" aria-label="DOM &amp; BOM"><!--[--><!--]--> DOM &amp; BOM <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E5%BC%82%E6%AD%A5.html" class="sidebar-item" aria-label="异步"><!--[--><!--]--> 异步 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html" class="sidebar-item" aria-label="事件循环"><!--[--><!--]--> 事件循环 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html" class="sidebar-item" aria-label="面向对象"><!--[--><!--]--> 面向对象 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6.html" class="sidebar-item" aria-label="函数进阶"><!--[--><!--]--> 函数进阶 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E6%AD%A3%E5%88%99.html" class="sidebar-item" aria-label="正则"><!--[--><!--]--> 正则 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E6%95%B0%E6%8D%AE%E5%8A%AB%E6%8C%81.html" class="sidebar-item" aria-label="数据劫持"><!--[--><!--]--> 数据劫持 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/ES6.html" class="sidebar-item" aria-label="ES6"><!--[--><!--]--> ES6 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/JavaScript/%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%86%E7%82%B9.html" class="sidebar-item" aria-label="常见知识点"><!--[--><!--]--> 常见知识点 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading active">Vue <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/note/frontend/Vue/%E9%85%8D%E7%BD%AE%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html" class="sidebar-item" aria-label="配置开发环境"><!--[--><!--]--> 配置开发环境 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/Vue-Cli.html" class="sidebar-item" aria-label="Vue-Cli"><!--[--><!--]--> Vue-Cli <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html" class="sidebar-item" aria-label="生命周期"><!--[--><!--]--> 生命周期 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html" class="sidebar-item" aria-label="组件通信"><!--[--><!--]--> 组件通信 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/Vue2.X%E5%9F%BA%E7%A1%80.html" class="sidebar-item" aria-label="Vue2.X 基础"><!--[--><!--]--> Vue2.X 基础 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/Vue3.X%E5%9F%BA%E7%A1%80.html" class="sidebar-item" aria-label="Vue3.X 基础"><!--[--><!--]--> Vue3.X 基础 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/Vue%E8%B7%AF%E7%94%B1.html" class="sidebar-item" aria-label="Vue路由"><!--[--><!--]--> Vue路由 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/VueX.html" class="sidebar-item" aria-label="Vuex"><!--[--><!--]--> Vuex <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/%E6%BA%90%E7%A0%81%E6%8E%A2%E7%B4%A2.html" class="sidebar-item" aria-label="源码探索"><!--[--><!--]--> 源码探索 <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/Webpack.html" class="sidebar-item" aria-label="Webpack"><!--[--><!--]--> Webpack <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/TyprScript.html" class="sidebar-item" aria-label="TyprScript"><!--[--><!--]--> TyprScript <!--[--><!--]--></a><!----></li><li><a href="/note/frontend/Vue/Element-UI.html" class="sidebar-item" aria-label="Element-UI"><!--[--><!--]--> Element-UI <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/note/frontend/Vue/Vue%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="Vue项目开发"><!--[--><!--]--> Vue项目开发 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="vue项目开发" tabindex="-1"><a class="header-anchor" href="#vue项目开发" aria-hidden="true">#</a> Vue项目开发</h1><h1 id="vue项目相关-基于-vue2-x-与-elementui" tabindex="-1"><a class="header-anchor" href="#vue项目相关-基于-vue2-x-与-elementui" aria-hidden="true">#</a> <strong>Vue项目相关（基于 Vue2.X 与 ElementUI）</strong></h1><h1 id="一、项目配置" tabindex="-1"><a class="header-anchor" href="#一、项目配置" aria-hidden="true">#</a> <strong>一、项目配置</strong></h1><p><strong>本站相关笔记</strong></p><p><a href="http://vue.cnsbq.com/notebook/vue/vue_04.html" target="_blank" rel="noopener noreferrer">组件通信<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a><a href="http://vue.cnsbq.com/notebook/vue/vue_05.html" target="_blank" rel="noopener noreferrer">接口调用<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a><a href="http://vue.cnsbq.com/notebook/vue/vue_09.html" target="_blank" rel="noopener noreferrer">源码探索<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a><a href="http://vue.cnsbq.com/notebook/vue/vue_11.html" target="_blank" rel="noopener noreferrer">常见配置<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a><a href="http://vue.cnsbq.com/notebook/vue/vue_12.html" target="_blank" rel="noopener noreferrer">Vue项目开发<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a><a href="http://vue.cnsbq.com/notebook/vue/vue_10.html" target="_blank" rel="noopener noreferrer">常用组件<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><strong><strong>axios的全局配置</strong></strong></p><ul><li>axios.defaults.timeout = 3000; // 超时时间</li><li>axios.defaults.baseURL = &#39;http://localhost:3000/app&#39;; // 默认地址</li><li>axios.defaults.headers[ &#39;mytoken&#39; ] = &#39;aasdfrwqwdadasdsa&#39;; // 请求头信息</li></ul><p><strong>在main.js中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>import axios from &#39;axios&#39;
+// 配置请求的跟路径
+axios.defaults.baseURL = &#39;http://127.0.0.1:8888/api/private/v1/&#39;
+// 在 request 拦截器中，展示进度条 NProgress.start()
+axios.interceptors.request.use(config =&gt; {
+  // console.log(config)
+  NProgress.start()
+  config.headers.Authorization = window.sessionStorage.getItem(&#39;token&#39;)
+  // 在最后必须 return config
+  return config
+})
+// 在 response 拦截器中，隐藏进度条 NProgress.done()
+axios.interceptors.response.use(config =&gt; {
+  NProgress.done()
+  return config
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>全局过滤器 Vue.filter</strong></strong></p><p>过滤器处理时间字段</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>Vue.filter(&#39;dateFormat&#39;, function(originVal) {
+  const dt = new Date(originVal)
+
+  const y = dt.getFullYear()
+  const m = (dt.getMonth() + 1 + &#39;&#39;).padStart(2, &#39;0&#39;)
+  const d = (dt.getDate() + &#39;&#39;).padStart(2, &#39;0&#39;)
+
+  const hh = (dt.getHours() + &#39;&#39;).padStart(2, &#39;0&#39;)
+  const mm = (dt.getMinutes() + &#39;&#39;).padStart(2, &#39;0&#39;)
+  const ss = (dt.getSeconds() + &#39;&#39;).padStart(2, &#39;0&#39;)
+
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>过滤器使用</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code> {{ scope.row.add_time | dateFormat }}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h1 id="二、增删改查" tabindex="-1"><a class="header-anchor" href="#二、增删改查" aria-hidden="true">#</a> <strong>二、增删改查</strong></h1><p><strong><strong>增</strong></strong></p><p><strong>绑定添加按钮事件</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;el-button type=&quot;primary&quot; @click=&quot;addDialogVisible = true&quot;&gt;添加用户&lt;/el-button&gt;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>添加用户对话框</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;!-- 添加用户对话框 --&gt;
+&lt;el-dialog
+  title=&quot;添加用户&quot;
+  :visible.sync=&quot;addDialogVisible&quot;
+  width=&quot;50%&quot;
+  @close=&quot;addDialogClosed&quot;&gt;
+  &lt;!-- 内容主体区域 --&gt;
+  &lt;el-form :model=&quot;addForm&quot; :rules=&quot;addFormRules&quot; ref=&quot;addFormRef&quot; label-width=&quot;70px&quot;&gt;
+    &lt;el-form-item label=&quot;用户名&quot; prop=&quot;username&quot;&gt;
+      &lt;el-input v-model=&quot;addForm.username&quot;&gt;&lt;/el-input&gt;
+    &lt;/el-form-item&gt;
+    &lt;el-form-item label=&quot;密码&quot; prop=&quot;password&quot;&gt;
+      &lt;el-input v-model=&quot;addForm.password&quot;&gt;&lt;/el-input&gt;
+    &lt;/el-form-item&gt;
+    &lt;el-form-item label=&quot;邮箱&quot; prop=&quot;email&quot;&gt;
+      &lt;el-input v-model=&quot;addForm.email&quot;&gt;&lt;/el-input&gt;
+    &lt;/el-form-item&gt;
+    &lt;el-form-item label=&quot;手机&quot; prop=&quot;mobile&quot;&gt;
+      &lt;el-input v-model=&quot;addForm.mobile&quot;&gt;&lt;/el-input&gt;
+    &lt;/el-form-item&gt;
+  &lt;/el-form&gt;
+  &lt;!-- 底部区域 --&gt;
+  &lt;span slot=&quot;footer&quot; class=&quot;dialog-footer&quot;&gt;
+    &lt;el-button @click=&quot;addDialogVisible = false&quot;&gt;取 消&lt;/el-button&gt;
+    &lt;el-button type=&quot;primary&quot; @click=&quot;addUser&quot;&gt;确 定&lt;/el-button&gt;
+  &lt;/span&gt;
+&lt;/el-dialog&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据操作 data中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>      // 用户表单信息
+addForm: {
+  username: &#39;&#39;,
+  password: &#39;&#39;,
+  email: &#39;&#39;,
+  mobile: &#39;&#39;
+},
+// 控制添加用户对话框显示隐藏
+addDialogVisible: false,
+// 添加表单的验证规则对象
+addFormRules: {
+  username: [
+    { required: true, message: &#39;请输入用户名&#39;, trigger: &#39;blur&#39; },
+    { min: 3, max: 10, message: &#39;用户名的长度在3-10个字符之间&#39;, trigger: &#39;blur&#39; }
+  ],
+  password: [
+    { required: true, message: &#39;请输入用户密码&#39;, trigger: &#39;blur&#39; },
+    { min: 6, max: 12, message: &#39;密码的长度在6-12个字符之间&#39;, trigger: &#39;blur&#39; }
+  ],
+  email: [
+    { required: true, message: &#39;请输入用户邮箱&#39;, trigger: &#39;blur&#39; },
+    { validator: checkEmail, trigger: &#39;blur&#39; }
+  ],
+  mobile: [
+    { required: true, message: &#39;请输入用户手机&#39;, trigger: &#39;blur&#39; },
+    { validator: checkMobile, trigger: &#39;blur&#39; }
+  ]
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据操作 methods中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// 监听添加用户对话框的关闭事件
+addDialogClosed() {
+  this.$refs.addFormRef.resetFields()
+},
+// 点击按钮添加新用户
+addUser() {
+  this.$refs.addFormRef.validate(async valid =&gt; {
+    if (!valid) return false
+    const { data: res } = await this.$http.post(&#39;users&#39;, this.addForm)
+    if (res.meta.status !== 201) {
+      this.$message.error(&#39;添加用户失败&#39;)
+    }
+    this.$message.success(&#39;添加用户成功&#39;)
+    this.addDialogVisible = false
+    this.getUserList()
+  })
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>删</strong></strong></p><p><strong>绑定删除按钮事件</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;el-table-column prop=&quot;&quot; label=&quot;操作&quot;&gt;
+  &lt;template slot-scope=&quot;scope&quot;&gt;
+    &lt;!-- 修改按钮 --&gt;
+    &lt;el-tooltip class=&quot;item&quot; effect=&quot;dark&quot; content=&quot;修改&quot; placement=&quot;top&quot;&gt;
+      &lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-edit&quot; circle size=&quot;mini&quot; @click=&quot;showEditDialog(scope.row.id)&quot;&gt;&lt;/el-button&gt;
+    &lt;/el-tooltip&gt;
+    &lt;!-- 删除按钮 --&gt;
+    &lt;el-tooltip class=&quot;item&quot; effect=&quot;dark&quot; content=&quot;删除&quot; placement=&quot;top&quot;&gt;
+      &lt;el-button type=&quot;danger&quot; icon=&quot;el-icon-delete&quot; circle size=&quot;mini&quot; @click=&quot;removeUserById(scope.row.id)&quot;&gt;&lt;/el-button&gt;
+    &lt;/el-tooltip&gt;
+  &lt;/template&gt;
+&lt;/el-table-column&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>根据id删除对应的用户信息</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// 根据id删除对应的用户信息
+async removeUserById(id) {
+  // 弹窗询问用户是否删除数据
+  const confirmResult = await this.$confirm(&#39;此操作将永久删除该用户, 是否继续?&#39;, &#39;提示&#39;, { confirmButtonText: &#39;确定&#39;, cancelButtonText: &#39;取消&#39;, type: &#39;warning&#39; }).catch(err =&gt; err)
+  // 如果用户确认删除，返回值为字符串 confirm
+  // 如果用户取消删除，返回值为字符串 cancel
+  if (confirmResult !== &#39;confirm&#39;) {
+    return this.$message.info(&#39;已经取消删除&#39;)
+  }
+  const { data: res } = await this.$http.delete(&#39;users/&#39; + id)
+  if (res.meta.status !== 200) {
+    return this.$message.error(&#39;删除用户失败！&#39;)
+  }
+  this.$message.success(&#39;删除用户成功！&#39;)
+  this.getUserList()
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>改</strong></strong></p><p><strong>绑定修改按钮事件</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;el-table-column prop=&quot;&quot; label=&quot;操作&quot;&gt;
+  &lt;template slot-scope=&quot;scope&quot;&gt;
+    &lt;!-- 修改按钮 --&gt;
+    &lt;el-tooltip class=&quot;item&quot; effect=&quot;dark&quot; content=&quot;修改&quot; placement=&quot;top&quot;&gt;
+      &lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-edit&quot; circle size=&quot;mini&quot; @click=&quot;showEditDialog(scope.row.id)&quot;&gt;&lt;/el-button&gt;
+    &lt;/el-tooltip&gt;
+    &lt;!-- 删除按钮 --&gt;
+    &lt;el-tooltip class=&quot;item&quot; effect=&quot;dark&quot; content=&quot;删除&quot; placement=&quot;top&quot;&gt;
+      &lt;el-button type=&quot;danger&quot; icon=&quot;el-icon-delete&quot; circle size=&quot;mini&quot; @click=&quot;removeUserById(scope.row.id)&quot;&gt;&lt;/el-button&gt;
+    &lt;/el-tooltip&gt;
+  &lt;/template&gt;
+&lt;/el-table-column&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>修改用户的对话框</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;!-- 修改用户的对话框 --&gt;
+&lt;el-dialog
+  title=&quot;修改用户&quot;
+  :visible.sync=&quot;editDialogVisible&quot;
+  width=&quot;50%&quot;
+  @close=&quot;editDialogClosed&quot;&gt;
+  &lt;!-- 内容主体区域 --&gt;
+  &lt;el-form :model=&quot;editForm&quot; :rules=&quot;editFormRules&quot; ref=&quot;editFormRef&quot; label-width=&quot;70px&quot;&gt;
+    &lt;el-form-item label=&quot;用户名&quot;&gt;
+      &lt;el-input v-model=&quot;editForm.username&quot; disabled&gt;&lt;/el-input&gt;
+    &lt;/el-form-item&gt;
+    &lt;el-form-item label=&quot;邮箱&quot; prop=&quot;email&quot;&gt;
+      &lt;el-input v-model=&quot;editForm.email&quot;&gt;&lt;/el-input&gt;
+    &lt;/el-form-item&gt;
+    &lt;el-form-item label=&quot;手机号&quot; prop=&quot;mobile&quot;&gt;
+      &lt;el-input v-model=&quot;editForm.mobile&quot;&gt;&lt;/el-input&gt;
+    &lt;/el-form-item&gt;
+  &lt;/el-form&gt;
+  &lt;!-- 底部区域 --&gt;
+  &lt;span slot=&quot;footer&quot; class=&quot;dialog-footer&quot;&gt;
+    &lt;el-button @click=&quot;editDialogVisible = false&quot;&gt;取 消&lt;/el-button&gt;
+    &lt;el-button type=&quot;primary&quot; @click=&quot;editUserInfo&quot;&gt;确 定&lt;/el-button&gt;
+  &lt;/span&gt;
+&lt;/el-dialog&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据操作 data中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// 控制修改表单的提示框显示隐藏
+editDialogVisible: false,
+// 修改表单的验证规则对象
+editFormRules: {
+  email: [
+    { required: true, message: &#39;请输入用户邮箱&#39;, trigger: &#39;blur&#39; },
+    { validator: checkEmail, trigger: &#39;blur&#39; }
+  ],
+  mobile: [
+    { required: true, message: &#39;请输入用户手机&#39;, trigger: &#39;blur&#39; },
+    { validator: checkMobile, trigger: &#39;blur&#39; }
+  ]
+},
+// 查询到的用户信息对象
+editForm: [],
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据操作 methods中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>//  监听修改用户对话框的关闭事件
+editDialogClosed() {
+  this.$refs.editFormRef.resetFields()
+},
+// 修改用户信息并提交
+editUserInfo() {
+  this.$refs.editFormRef.validate(async valid =&gt; {
+    if (!valid) return false
+    // 发起修改用户信息的数据请求
+    const { data: res } = await this.$http.put(&#39;users/&#39; + this.editForm.id, { email: this.editForm.email, mobile: this.editForm.mobile })
+    if (res.meta.status !== 200) {
+      return this.$message.error(&#39;更新用户信息失败&#39;)
+    }
+    // 关闭对话框
+    this.editDialogVisible = false
+    // 更新数据列表
+    this.getUserList()
+    // 提示信息
+    this.$message.success(&#39;更新用户信息成功&#39;)
+  })
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>查</strong></strong></p><p><strong>查询用户</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;el-input placeholder=&quot;请输入内容&quot; class=&quot;input-with-select&quot; v-model=&quot;queryInfo.query&quot; clearable @clear=&quot;getUserList&quot;&gt;
+  &lt;el-button slot=&quot;append&quot; icon=&quot;el-icon-search&quot; @click=&quot;getUserList&quot;&gt;&lt;/el-button&gt;
+&lt;/el-input&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>数据处理 data中</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// 获取用户列表的参数对象
+queryInfo: {
+  query: &#39;&#39;,
+  pagenum: 1,
+  pagesize: 2
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据处理 methods中</strong></p><p>默认query条件为空输出全部列表，搜索时传入搜索条件查询指定内容。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>async getUserList() {
+  const { data: res } = await this.$http.get(&#39;users&#39;, {
+    params: this.queryInfo
+  })
+  if (res.meta.status !== 200) {
+    return this.$message.error(&#39;获取用户列表失败！&#39;)
+  }
+  this.userList = res.data.users
+  this.total = res.data.total
+  // console.log(res)
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>列表输出</strong></strong></p><p><strong>数据列表 data中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// 用户列表
+userList: [],
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据列表 created中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>created() {
+  this.getUserList()
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据列表 methods中</strong></p><p>不需要传参</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>async getRightsList() {
+  const { data: res } = await this.$http.get(&#39;rights/list&#39;)
+  if (res.meta.status !== 200) {
+    return this.$message.error(&#39;获取权限列表失败！&#39;)
+  }
+  this.rightsList = res.data
+  console.log(this.rightsList)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>有搜索功能，需要传参</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// 获取用户数据列表
+async getUserList() {
+  const { data: res } = await this.$http.get(&#39;users&#39;, {
+    params: this.queryInfo
+  })
+  if (res.meta.status !== 200) {
+    return this.$message.error(&#39;获取用户列表失败！&#39;)
+  }
+  this.userList = res.data.users
+  this.total = res.data.total
+  // console.log(res)
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>分页</strong></strong></p><p><strong>分页区域</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;!-- 分页区域 --&gt;
+&lt;el-pagination
+  @size-change=&quot;handleSizeChange&quot;
+  @current-change=&quot;handleCurrentChange&quot;
+  :current-page=&quot;queryInfo.pagenum&quot;
+  :page-sizes=&quot;[2, 4, 5, 20]&quot;
+  :page-size=&quot;100&quot;
+  layout=&quot;total, sizes, prev, pager, next, jumper&quot;
+  :total=&quot;total&quot;&gt;
+&lt;/el-pagination&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据列表 created中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>created() {
+  this.getUserList()
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据处理 data中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// 获取用户列表的参数分页对象
+queryInfo: {
+  pagenum: 1,
+  pagesize: 2
+},
+// 列总数
+total: 0,
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据处理 methods中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// 监听 pagesize 改变的事件
+handleSizeChange(newSize) {
+  this.queryInfo.pagesize = newSize
+  this.getUserList()
+},
+handleCurrentChange(newPage) {
+  this.queryInfo.pagenum = newPage
+  this.getUserList()
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>添加商品</strong></strong></p><p><strong>整体结构</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;!-- 卡片视图 --&gt;
+&lt;el-card&gt;
+  &lt;!-- 提示区域 --&gt;
+  &lt;el-alert title=&quot;添加商品信息&quot; type=&quot;info&quot; center show-icon :closable=&quot;false&quot;&gt;
+  &lt;/el-alert&gt;
+  &lt;!-- 步骤条区域 --&gt;
+  &lt;el-steps :space=&quot;200&quot; :active=&quot;activeIndex - 0&quot; finish-status=&quot;success&quot; align-center&gt;
+    &lt;el-step title=&quot;基本信息&quot;&gt;&lt;/el-step&gt;
+    &lt;el-step title=&quot;商品参数&quot;&gt;&lt;/el-step&gt;
+    &lt;el-step title=&quot;商品属性&quot;&gt;&lt;/el-step&gt;
+    &lt;el-step title=&quot;商品图片&quot;&gt;&lt;/el-step&gt;
+    &lt;el-step title=&quot;商品内容&quot;&gt;&lt;/el-step&gt;
+    &lt;el-step title=&quot;完成&quot;&gt;&lt;/el-step&gt;
+  &lt;/el-steps&gt;
+
+  &lt;!-- tab栏区域 --&gt;
+
+  &lt;el-form :model=&quot;addForm&quot; :rules=&quot;addFormRules&quot; ref=&quot;addFormRef&quot; label-width=&quot;100px&quot; label-position=&quot;top&quot;&gt;
+    &lt;el-tabs v-model=&quot;activeIndex&quot; :tab-position=&quot;&#39;left&#39;&quot; :before-leave=&quot;beforeTabLeave&quot; @tab-click=&quot;tabClicked&quot;&gt;
+      &lt;el-tab-pane label=&quot;基本信息&quot; name=&quot;0&quot;&gt;
+        &lt;el-form-item label=&quot;商品名称&quot; prop=&quot;goods_name&quot;&gt;
+          &lt;el-input v-model=&quot;addForm.goods_name&quot;&gt;&lt;/el-input&gt;
+        &lt;/el-form-item&gt;
+        &lt;el-form-item label=&quot;商品价格&quot; prop=&quot;goods_price&quot;&gt;
+          &lt;el-input v-model=&quot;addForm.goods_price&quot; type=&quot;number&quot;&gt;&lt;/el-input&gt;
+        &lt;/el-form-item&gt;
+        &lt;el-form-item label=&quot;商品重量&quot; prop=&quot;goods_weight&quot;&gt;
+          &lt;el-input v-model=&quot;addForm.goods_weight&quot; type=&quot;number&quot;&gt;&lt;/el-input&gt;
+        &lt;/el-form-item&gt;
+        &lt;el-form-item label=&quot;商品数量&quot; prop=&quot;goods_number&quot;&gt;
+          &lt;el-input v-model=&quot;addForm.goods_number&quot; type=&quot;number&quot;&gt;&lt;/el-input&gt;
+        &lt;/el-form-item&gt;
+        &lt;el-form-item label=&quot;商品分类&quot; prop=&quot;goods_cat&quot;&gt;
+          &lt;el-cascader expand-trigger=&quot;hover&quot; :options=&quot;catelist&quot; :props=&quot;cateProps&quot; v-model=&quot;addForm.goods_cat&quot; @change=&quot;handleChange&quot;&gt;
+          &lt;/el-cascader&gt;
+        &lt;/el-form-item&gt;
+      &lt;/el-tab-pane&gt;
+      &lt;el-tab-pane label=&quot;商品参数&quot; name=&quot;1&quot;&gt;
+        &lt;!-- 渲染表单的Item项 --&gt;
+        &lt;el-form-item :label=&quot;item.attr_name&quot; v-for=&quot;item in manyTableData&quot; :key=&quot;item.attr_id&quot;&gt;
+          &lt;!-- 复选框组 --&gt;
+          &lt;el-checkbox-group v-model=&quot;item.attr_vals&quot;&gt;
+            &lt;el-checkbox :label=&quot;cb&quot; v-for=&quot;(cb, i) in item.attr_vals&quot; :key=&quot;i&quot; border&gt;&lt;/el-checkbox&gt;
+          &lt;/el-checkbox-group&gt;
+        &lt;/el-form-item&gt;
+      &lt;/el-tab-pane&gt;
+      &lt;el-tab-pane label=&quot;商品属性&quot; name=&quot;2&quot;&gt;
+        &lt;el-form-item :label=&quot;item.attr_name&quot; v-for=&quot;item in onlyTableData&quot; :key=&quot;item.attr_id&quot;&gt;
+          &lt;el-input v-model=&quot;item.attr_vals&quot;&gt;&lt;/el-input&gt;
+        &lt;/el-form-item&gt;
+      &lt;/el-tab-pane&gt;
+      &lt;el-tab-pane label=&quot;商品图片&quot; name=&quot;3&quot;&gt;
+        &lt;!-- action 表示图片要上传到的后台API地址 --&gt;
+        &lt;el-upload :action=&quot;uploadURL&quot; :on-preview=&quot;handlePreview&quot; :on-remove=&quot;handleRemove&quot; list-type=&quot;picture&quot; :headers=&quot;headerObj&quot; :on-success=&quot;handleSuccess&quot;&gt;
+          &lt;el-button size=&quot;small&quot; type=&quot;primary&quot;&gt;点击上传&lt;/el-button&gt;
+        &lt;/el-upload&gt;
+      &lt;/el-tab-pane&gt;
+      &lt;el-tab-pane label=&quot;商品内容&quot; name=&quot;4&quot;&gt;
+        &lt;!-- 富文本编辑器组件 --&gt;
+        &lt;quill-editor v-model=&quot;addForm.goods_introduce&quot;&gt;&lt;/quill-editor&gt;
+        &lt;!-- 添加商品的按钮 --&gt;
+        &lt;el-button type=&quot;primary&quot; class=&quot;btnAdd&quot; @click=&quot;add&quot;&gt;添加商品&lt;/el-button&gt;
+      &lt;/el-tab-pane&gt;
+    &lt;/el-tabs&gt;
+  &lt;/el-form&gt;
+
+&lt;/el-card&gt;
+
+&lt;!-- 图片预览 --&gt;
+&lt;el-dialog title=&quot;图片预览&quot; :visible.sync=&quot;previewVisible&quot; width=&quot;50%&quot;&gt;
+  &lt;img :src=&quot;previewPath&quot; alt=&quot;&quot; class=&quot;previewImg&quot;&gt;
+&lt;/el-dialog&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>处理代码</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>import _ from &#39;lodash&#39;
+
+export default {
+  data() {
+    return {
+      activeIndex: &#39;0&#39;,
+      // 添加商品的表单数据对象
+      addForm: {
+        goods_name: &#39;&#39;,
+        goods_price: 0,
+        goods_weight: 0,
+        goods_number: 0,
+        // 商品所属的分类数组
+        goods_cat: [],
+        // 图片的数组
+        pics: [],
+        // 商品的详情描述
+        goods_introduce: &#39;&#39;,
+        attrs: []
+      },
+      addFormRules: {
+        goods_name: [
+          { required: true, message: &#39;请输入商品名称&#39;, trigger: &#39;blur&#39; }
+        ],
+        goods_price: [
+          { required: true, message: &#39;请输入商品价格&#39;, trigger: &#39;blur&#39; }
+        ],
+        goods_weight: [
+          { required: true, message: &#39;请输入商品重量&#39;, trigger: &#39;blur&#39; }
+        ],
+        goods_number: [
+          { required: true, message: &#39;请输入商品数量&#39;, trigger: &#39;blur&#39; }
+        ],
+        goods_cat: [
+          { required: true, message: &#39;请选择商品分类&#39;, trigger: &#39;blur&#39; }
+        ]
+      },
+      // 商品分类列表
+      catelist: [],
+      cateProps: {
+        label: &#39;cat_name&#39;,
+        value: &#39;cat_id&#39;,
+        children: &#39;children&#39;
+      },
+      // 动态参数列表数据
+      manyTableData: [],
+      // 静态属性列表数据
+      onlyTableData: [],
+      // 上传图片的URL地址
+      uploadURL: &#39;http://127.0.0.1:8888/api/private/v1/upload&#39;,
+      // 图片上传组件的headers请求头对象
+      headerObj: {
+        Authorization: window.sessionStorage.getItem(&#39;token&#39;)
+      },
+      previewPath: &#39;&#39;,
+      previewVisible: false
+    }
+  },
+  created() {
+    this.getCateList()
+  },
+  methods: {
+    // 获取所有商品分类数据
+    async getCateList() {
+      const { data: res } = await this.$http.get(&#39;categories&#39;)
+
+      if (res.meta.status !== 200) {
+        return this.$message.error(&#39;获取商品分类数据失败！&#39;)
+      }
+
+      this.catelist = res.data
+      console.log(this.catelist)
+    },
+    // 级联选择器选中项变化，会触发这个函数
+    handleChange() {
+      console.log(this.addForm.goods_cat)
+      if (this.addForm.goods_cat.length !== 3) {
+        this.addForm.goods_cat = []
+      }
+    },
+    beforeTabLeave(activeName, oldActiveName) {
+      // console.log(&#39;即将离开的标签页名字是：&#39; + oldActiveName)
+      // console.log(&#39;即将进入的标签页名字是：&#39; + activeName)
+      // return false
+      if (oldActiveName === &#39;0&#39; &amp;&amp; this.addForm.goods_cat.length !== 3) {
+        this.$message.error(&#39;请先选择商品分类！&#39;)
+        return false
+      }
+    },
+    async tabClicked() {
+      // console.log(this.activeIndex)
+      // 证明访问的是动态参数面板
+      if (this.activeIndex === &#39;1&#39;) {
+        const { data: res } = await this.$http.get(
+          `categories/${this.cateId}/attributes`,
+          {
+            params: { sel: &#39;many&#39; }
+          }
+        )
+
+        if (res.meta.status !== 200) {
+          return this.$message.error(&#39;获取动态参数列表失败！&#39;)
+        }
+
+        console.log(res.data)
+        res.data.forEach(item =&gt; {
+          item.attr_vals =
+            item.attr_vals.length === 0 ? [] : item.attr_vals.split(&#39; &#39;)
+        })
+        this.manyTableData = res.data
+      } else if (this.activeIndex === &#39;2&#39;) {
+        const { data: res } = await this.$http.get(
+          `categories/${this.cateId}/attributes`,
+          {
+            params: { sel: &#39;only&#39; }
+          }
+        )
+
+        if (res.meta.status !== 200) {
+          return this.$message.error(&#39;获取静态属性失败！&#39;)
+        }
+
+        console.log(res.data)
+        this.onlyTableData = res.data
+      }
+    },
+    // 处理图片预览效果
+    handlePreview(file) {
+      console.log(file)
+      this.previewPath = file.response.data.url
+      this.previewVisible = true
+    },
+    // 处理移除图片的操作
+    handleRemove(file) {
+      // console.log(file)
+      // 1. 获取将要删除的图片的临时路径
+      const filePath = file.response.data.tmp_path
+      // 2. 从 pics 数组中，找到这个图片对应的索引值
+      const i = this.addForm.pics.findIndex(x =&gt; x.pic === filePath)
+      // 3. 调用数组的 splice 方法，把图片信息对象，从 pics 数组中移除
+      this.addForm.pics.splice(i, 1)
+      console.log(this.addForm)
+    },
+    // 监听图片上传成功的事件
+    handleSuccess(response) {
+      console.log(response)
+      // 1. 拼接得到一个图片信息对象
+      const picInfo = { pic: response.data.tmp_path }
+      // 2. 将图片信息对象，push 到pics数组中
+      this.addForm.pics.push(picInfo)
+      console.log(this.addForm)
+    },
+    // 添加商品
+    add() {
+      this.$refs.addFormRef.validate(async valid =&gt; {
+        if (!valid) {
+          return this.$message.error(&#39;请填写必要的表单项！&#39;)
+        }
+        // 执行添加的业务逻辑
+        // lodash   cloneDeep(obj)
+        const form = _.cloneDeep(this.addForm)
+        form.goods_cat = form.goods_cat.join(&#39;,&#39;)
+        // 处理动态参数
+        this.manyTableData.forEach(item =&gt; {
+          const newInfo = {
+            attr_id: item.attr_id,
+            attr_value: item.attr_vals.join(&#39; &#39;)
+          }
+          this.addForm.attrs.push(newInfo)
+        })
+        // 处理静态属性
+        this.onlyTableData.forEach(item =&gt; {
+          const newInfo = { attr_id: item.attr_id, attr_value: item.attr_vals }
+          this.addForm.attrs.push(newInfo)
+        })
+        form.attrs = this.addForm.attrs
+        console.log(form)
+
+        // 发起请求添加商品
+        // 商品的名称，必须是唯一的
+        const { data: res } = await this.$http.post(&#39;goods&#39;, form)
+
+        if (res.meta.status !== 201) {
+          return this.$message.error(&#39;添加商品失败！&#39;)
+        }
+
+        this.$message.success(&#39;添加商品成功！&#39;)
+        this.$router.push(&#39;/goods&#39;)
+      })
+    }
+  },
+  computed: {
+    cateId() {
+      if (this.addForm.goods_cat.length === 3) {
+        return this.addForm.goods_cat[2]
+      }
+      return null
+    }
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="三、功能实现" tabindex="-1"><a class="header-anchor" href="#三、功能实现" aria-hidden="true">#</a> <strong>三、功能实现</strong></h1><p><strong><strong>登陆验证</strong></strong></p><p>登陆表单结构</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;el-form :model=&quot;loginForm&quot; :rules=&quot;loginFormRules&quot; ref=&quot;loginFormRef&quot; class=&quot;login_form&quot;&gt;
+  &lt;!-- 用户名 --&gt;
+  &lt;el-form-item prop=&quot;username&quot;&gt;
+    &lt;el-input v-model=&quot;loginForm.username&quot; prefix-icon=&quot;iconfont icon-user&quot; placeholder=&quot;请输入用户名&quot;&gt;&lt;/el-input&gt;
+  &lt;/el-form-item&gt;
+  &lt;!-- 密码 --&gt;
+  &lt;el-form-item prop=&quot;password&quot;&gt;
+    &lt;el-input v-model=&quot;loginForm.password&quot; prefix-icon=&quot;iconfont icon-3702mima&quot; placeholder=&quot;请输入密码&quot; type=&quot;password&quot;&gt;&lt;/el-input&gt;
+  &lt;/el-form-item&gt;
+  &lt;!-- 按钮 --&gt;
+  &lt;el-form-item class=&quot;btns&quot;&gt;
+    &lt;el-button type=&quot;primary&quot; @click=&quot;login&quot;&gt;登录&lt;/el-button&gt;
+    &lt;el-button type=&quot;info&quot; @click=&quot;resetLoginForm&quot;&gt;重置&lt;/el-button&gt;
+  &lt;/el-form-item&gt;
+&lt;/el-form&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>data数据</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>loginForm: {
+  username: &#39;admin&#39;,
+  password: &#39;123456&#39;
+},
+loginFormRules: {
+  // 验证登录用户名
+  username: [
+    { required: true, message: &#39;请输入登录名称&#39;, trigger: &#39;blur&#39; },
+    { min: 3, max: 10, message: &#39;长度在 3 到 10 个字符&#39;, trigger: &#39;blur&#39; }
+  ],
+  // 验证登录密码
+  password: [
+    { required: true, message: &#39;请输入登录密码&#39;, trigger: &#39;blur&#39; },
+    { min: 6, max: 12, message: &#39;长度在 6 到 12 个字符&#39;, trigger: &#39;blur&#39; }
+  ]
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>表单验证 保存token</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// 重置表单
+resetLoginForm() {
+  this.$refs.loginFormRef.resetFields()
+},
+// 登录验证
+login() {
+  this.$refs.loginFormRef.validate(async valid =&gt; {
+    if (!valid) return false
+    const { data: res } = await this.$http.post(&#39;login&#39;, this.loginForm)
+    if (res.meta.status !== 200) {
+      return this.$message.error(&#39;登录失败！&#39;)
+    } else {
+      this.$message.success(&#39;登录成功！&#39;)
+      // 1. 将登录成功之后的token保存到客户端的 sessionStorage 中
+      // 1.1 项目中除了登录之外的其他api接口，必须在登录之后才能访问
+      // 1.2 token 只应在当前网站打开期间生效，所以将 token 保存在 sessionStorage 中
+      window.sessionStorage.setItem(&#39;token&#39;, res.data.token)
+      // 2. 通过编程式导航跳转到后台主页，路由地址是 /home
+      this.$router.push(&#39;/home&#39;)
+    }
+  })
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>退出登录</strong></strong></p><p><strong>绑定退出按钮</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;el-button type=&quot;info&quot; @click=&quot;logout&quot;&gt;退出&lt;/el-button&gt;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>退出方法 methods中</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>logout() {
+  window.sessionStorage.clear()
+  this.$router.push(&#39;/login&#39;)
+},
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>设置长时间未操作登录自动到期重新返回登录页</strong></strong></p><p>在main.js中</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>import routerUtil from &quot;@/utils/routerutil&quot;; // 先将js文件在main.js中引入
+
+routerUtil(router);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在登陆成功后调用sessionUtil文件中的setSession，sessionUtil</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>import sessionUtil from &#39;@/utils/sessionutil&#39;
+
+sessionUtil.setSession(&quot;userInfo&quot;, &#39;2&#39;);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在routerutil.js文件中</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>import sessionUtil from &quot;./sessionutil&quot;;
+const whiteList = [&quot;/&quot;,&#39;/logins&#39;]; // 路由白名单，不需要校验
+
+export default router =&gt; {
+  router.beforeEach(async (to, from, next) =&gt; {/*在跳转之前执行*/
+    const userInfo = sessionUtil.getSession(&quot;userInfo&quot;);//触发sessionUtil中的getSession方法
+      if ( userInfo ) {
+      } else {
+      if (whiteList.indexOf(to.path) !== -1) {
+        next();
+      } else {
+        Message({
+          type: &quot;warning&quot;,
+          message: &quot;用户登录过期，请重新登录&quot;,
+          duration: 1500,
+          onClose() {
+            next(`/`);
+          }
+        });
+      }
+    }
+  });
+};
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在sessionutil.js文件中</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>const sessionutil = {
+  setSession(key,value,maxAge){ //key=userInfo  value=2  maxAge=&#39;&#39;  ||  可自行设置
+    const maxAgeTime = new Date().getTime() + 1000 * 3600; // 当前时间的+1小时 session 过期时间
+    try{
+      let data = { value, maxAge: maxAge ? maxAge : maxAgeTime }
+      sessionStorage.setItem(typeof key === &#39;string&#39;?key: JSON.stringify(key),JSON.stringify(data))
+    }catch(err){
+    }
+  },
+  getSession(key){
+    try{
+      const maxAgeTime = new Date().getTime() + 1000 * 3600; // 首先先设置一个 session 过期时间 1H后可自行设置
+      let date = new Date().getTime();  //当前时间
+      let session  = JSON.parse(sessionStorage.getItem(typeof key === &#39;string&#39;?key: JSON.stringify(key)));
+      if(session &amp;&amp; session.maxAge != null &amp;&amp; session.maxAge-date &gt; 0 &amp;&amp; session.maxAge &lt;= maxAgeTime ){
+        this.setSession(key,session.value);
+        return session.value;
+      } else {
+        return null;
+      }
+    }catch(err){
+    }
+  },
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>VueX实践</strong></strong></p><p>在项目的src目录下新建一个目录store，在该目录下新建一个index.js文件，我们用来创建vuex实例，然后在该文件中引入vue和vuex，创建Vuex.Store实例保存到变量store中，最后使用export default导出store</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+  },
+  mutations: {
+  },
+  actions: {
+  },
+  modules: {
+  }
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在main.js文件中引入该文件，在文件里面添加 import store from ‘./store’;，再在vue实例全局引入store对象</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>import Vue from &#39;vue&#39;
+import App from &#39;./App.vue&#39;
+import router from &#39;./router&#39;
+import store from &#39;./store&#39;
+
+Vue.config.productionTip = false
+
+new Vue({
+  router,
+  store,
+  render: h =&gt; h(App)
+}).$mount(&#39;#app&#39;)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>State：vuex中的数据源，一般用来保存数据，例如登录人的id，name，等等信息</p><p>Getters：Getter相当于vue中的computed计算属性，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算，这里我们可以通过定义vuex的Getter来获取，Getters 可以用于监听、state中的值的变化，返回计算后的结果</p><h1 id="三、第三方组件使用" tabindex="-1"><a class="header-anchor" href="#三、第三方组件使用" aria-hidden="true">#</a> <strong>三、第三方组件使用</strong></h1><p><strong><strong>Vue轻量级富文本编辑器-Vue-Quill-Editor</strong></strong></p><p><strong>下载Vue-Quill-Editor</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>npm install vue-quill-editor --save
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>下载quill（Vue-Quill-Editor需要依赖）</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>npm install quill --save
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>在main.js中导入</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// 导入富文本编辑器
+import VueQuillEditor from &#39;vue-quill-editor&#39;
+// require styles 导入富文本编辑器对应的样式
+import &#39;quill/dist/quill.core.css&#39;
+import &#39;quill/dist/quill.snow.css&#39;
+import &#39;quill/dist/quill.bubble.css&#39;
+
+// 将富文本编辑器，注册为全局可用的组件
+Vue.use(VueQuillEditor)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>页面组件使用</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>
+&lt;template&gt;
+  &lt;div class=&quot;edit_container&quot;&gt;
+    &lt;quill-editor
+      v-model=&quot;content&quot;
+      ref=&quot;myQuillEditor&quot;
+      :options=&quot;editorOption&quot;
+      @blur=&quot;onEditorBlur($event)&quot; @focus=&quot;onEditorFocus($event)&quot;
+      @change=&quot;onEditorChange($event)&quot;&gt;
+    &lt;/quill-editor&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import { quillEditor } from &quot;vue-quill-editor&quot;; //调用编辑器
+import &#39;quill/dist/quill.core.css&#39;;
+import &#39;quill/dist/quill.snow.css&#39;;
+import &#39;quill/dist/quill.bubble.css&#39;;
+export default {
+  components: {
+    quillEditor
+  },
+  data() {
+    return {
+      content: `&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;strong&gt;&lt;em&gt;Or drag/paste an image here.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;em&gt;rerew&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;em&gt;rtrete&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;em&gt;tytrytr&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;em&gt;uytu&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;&lt;/ol&gt;`,
+      editorOption: {}
+    }
+  },
+  methods: {
+    onEditorReady(editor) { // 准备编辑器
+
+    },
+    onEditorBlur(){}, // 失去焦点事件
+    onEditorFocus(){}, // 获得焦点事件
+    onEditorChange(){}, // 内容改变事件
+  },
+  computed: {
+    editor() {
+      return this.$refs.myQuillEditor.quill;
+    },
+  }
+}
+&lt;/script&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>swipper</strong></strong></p><p>下载组件</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>npm install swiper
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>使用组件</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>&lt;template  style=&quot;touch-action:none;&quot;&gt;
+  &lt;swiper :options=&quot;swiperOption&quot; class=wrapper&gt;
+    &lt;swiper-slide v-for=&quot;item of swiperList&quot; :key=&quot;item.id&quot;&gt;
+      &lt;img class=&quot;swiper-img&quot; v-bind:src=&quot;item.imgUrl&quot;&gt;
+    &lt;/swiper-slide&gt;
+    &lt;div class=&quot;swiper-pagination&quot;  slot=&quot;pagination&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;swiper-button-prev&quot; slot=&quot;button-prev&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;swiper-button-next&quot; slot=&quot;button-next&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;swiper-scrollbar&quot;   slot=&quot;scrollbar&quot;&gt;&lt;/div&gt;
+  &lt;/swiper&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: &#39;carrousel&#39;,
+  props:[&#39;swiperList&#39;],
+  data () {
+    return {
+      swiperOption: {
+          loop:true,
+          pagination:{
+              el:&#39;.swiper-pagination&#39;,
+              clickable:true,
+          },
+          navigation: {
+            nextEl: &#39;.swiper-button-next&#39;,
+            prevEl: &#39;.swiper-button-prev&#39;,
+          },
+          scrollbar: {
+            el: &#39;.swiper-scrollbar&#39;,
+          },
+      }
+    }
+  }
+}
+&lt;/script&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><strong>better-scroll</strong></strong></p><p>本文参考：<a href="https://blog.csdn.net/senmage/article/details/82388728" target="_blank" rel="noopener noreferrer">Vue轻量级富文本编辑器-Vue-Quill-Editor<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p></div><!--[--><!--]--></div><footer class="page-meta"><!----><!----><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/note/frontend/Vue/Element-UI.html" class="" aria-label="Element-UI"><!--[--><!--]--> Element-UI <!--[--><!--]--></a></span><!----></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.629164ab.js" defer></script>
+  </body>
+</html>

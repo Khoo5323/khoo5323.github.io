@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-9d5b8044","path":"/note/frontend/JavaScript/%E5%8E%9F%E5%9E%8B%E9%93%BE.html","title":"原型链","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/JavaScript/原型链.md"}');export{t as data};

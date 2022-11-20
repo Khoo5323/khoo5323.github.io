@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-276bac72","path":"/note/frontend/JavaScript/%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%86%E7%82%B9.html","title":"常见知识点","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/JavaScript/常见知识点.md"}');export{t as data};

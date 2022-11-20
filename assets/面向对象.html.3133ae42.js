@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-10b1f632","path":"/note/frontend/JavaScript/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html","title":"面向对象","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/JavaScript/面向对象.md"}');export{t as data};

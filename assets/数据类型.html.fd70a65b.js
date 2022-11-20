@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-fb31a3c2","path":"/note/frontend/JavaScript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html","title":"数据类型","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/frontend/JavaScript/数据类型.md"}');export{t as data};
