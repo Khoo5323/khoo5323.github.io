@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-642798b4","path":"/note/before/%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF%E4%B9%8B%E5%89%8D.html","title":"学习前端之前","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"三省吾身","slug":"三省吾身","link":"#三省吾身","children":[]}],"git":{},"filePathRelative":"note/before/学习前端之前.md"}');export{e as data};

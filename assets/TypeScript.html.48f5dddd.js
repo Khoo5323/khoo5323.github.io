@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-525b984a","path":"/note/interview/%E5%85%B6%E4%BB%96%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/TypeScript.html","title":"TypeScript","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"note/interview/其他前端面试题/TypeScript.md"}');export{e as data};
